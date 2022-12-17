@@ -1,0 +1,11 @@
+external-config:
+  base-url: https://sandbox.platfr.io
+  auth-schema: S2S
+  api-key: FXOVVXXHVCPVPBZXIJOBGUGSKHDNFRRQJP
+  id-chiave: 3202
+  accountId: 14537780
+  external-service-url:
+    url-account: /api/gbs/banking/v4.0/accounts/{accountId}
+    url-balance: /api/gbs/banking/v4.0/accounts/{accountId}/balance
+    url-transactions: /api/gbs/banking/v4.0/accounts/{accountId}/transactions
+    url-money-transfer: /api/gbs/banking/v4.0/accounts/{accountId}/payments/money-transfers
