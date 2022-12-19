@@ -1,5 +1,5 @@
 # DEMO TEST
-This is a simple web applciation middle offers banking service: account, account balance, list transactions and money transfer from third sides. 
+####This is a simple web applciation middle offers banking service: account, account balance, list transactions and money transfer from third sides. 
 
 Used technologies:
   - java 17
@@ -34,10 +34,12 @@ For windows:
 ```bash
 set PROJECT_FOLDER XXXX # add project root folder
 set APP_VERSON YYYY # add app version
+
 cd $PROJECT_FOLDER 
+git checkout master
 mvn clean install 
 cd /target
-java -jar demo-$APP_VERSION-SNAPSHOT.jar
+java -jar demo-$APP_VERSION.jar
 ```
 
 ## Integrate with your tools
