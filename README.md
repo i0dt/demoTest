@@ -1,7 +1,11 @@
 # DEMO TEST
-#### This is a simple web applciation middle offers banking service: account, account balance, list transactions and money transfer from third sides. 
+#### This is a simple web applciation middle offers banking services from third sides: 
+ - account service
+ - account balance service
+ - list transactions service
+ - money transfer service
 
-Used technologies:
+#### Used technologies:
   - java 17
   - Spring Boot 3.0.0 
   - Spring Data Jpa 3.0.0
