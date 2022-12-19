@@ -3,12 +3,21 @@ package it.test.demo.rest;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import org.springframework.http.HttpHeaders;
+
 import it.test.demo.rest.bean.RequestMoneyTransfer;
 import it.test.demo.rest.bean.TaxRelief;
 import it.test.demo.rest.enums.ErrorEnum;
 import it.test.demo.rest.exception.CustomException;
 
 abstract class RestServiceA implements RestServiceI {
+	
+	HttpHeaders httpHeaders() {
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.set("X-Time-Zone", "Europe/Rome");
+		return responseHeaders;
+	}
+	
 	void validateAccountInput(String accountId) throws CustomException {
 		valideAccountId(accountId);
 	}
