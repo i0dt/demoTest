@@ -19,8 +19,6 @@ Used technologies:
 - [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
 - [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
 
-
-
 ```bash
 cd existing_repo
 git remote add origin https://github.com/i0dt/demoTest.git
@@ -40,6 +38,14 @@ git checkout master
 mvn clean install 
 cd /target
 java -jar demo-$APP_VERSION.jar
+```
+Local endPoits services:
+```bash
+$(aoountId) = 14537780
+Local account(GET): http://localhost:8080/accounts/$(aoountId)
+Local balance (GET): http://localhost:8080/accounts/$(aoountId)/balance
+Local transactions (GET): http://localhost:8080/accounts/$(aoountId)/transactions?fromAccountingDate=2022-04-01&toAccountingDate=2022-05-01
+Local money transfers (POST): http://localhost:8080/accounts/$(aoountId)/payments/money-transfers
 ```
 
 ## Integrate with your tools

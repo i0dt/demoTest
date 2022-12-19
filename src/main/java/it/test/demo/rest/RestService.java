@@ -14,7 +14,6 @@ import it.test.demo.rest.bean.ResponseMoneyTransfer;
 import it.test.demo.rest.exception.CustomException;
 import it.test.demo.rest.exception.ServerException;
 import it.test.demo.rest.service.AccountManagerI;
-import it.test.demo.rest.utils.CommonUtils;
 
 /**
  * Rest controllo for handle account, account balance, list transactions and money transfers for payment
@@ -37,11 +36,11 @@ public class RestService extends RestServiceA {
 	public ResponseEntity<Object> account(@PathVariable String accountId) {
 		try {
 			validateAccountInput(accountId);
-			return ResponseEntity.ok().headers(CommonUtils.httpHeaders()).body(accountManager.getAccount(accountId));
+			return ResponseEntity.ok().headers(httpHeaders()).body(accountManager.getAccount(accountId));
 		} catch (CustomException e) {
-			return ResponseEntity.status(CUSTOM_HTTP_STATUS_ERROR).headers(CommonUtils.httpHeaders()).body(e.getErrors());
+			return ResponseEntity.status(CUSTOM_HTTP_STATUS_ERROR).headers(httpHeaders()).body(e.getErrors());
 		} catch (ServerException e) {
-			return ResponseEntity.status(CUSTOM_SERVER_STATUS_ERROR).headers(CommonUtils.httpHeaders()).body(e.getErrors());
+			return ResponseEntity.status(CUSTOM_SERVER_STATUS_ERROR).headers(httpHeaders()).body(e.getErrors());
 		}
 	}
 
@@ -52,11 +51,11 @@ public class RestService extends RestServiceA {
 	public ResponseEntity<Object> accountBalance(@PathVariable String accountId) {
 		try {
 			validateBalanceInput(accountId);
-			return ResponseEntity.ok().headers(CommonUtils.httpHeaders()).body(accountManager.getBalance(accountId));
+			return ResponseEntity.ok().headers(httpHeaders()).body(accountManager.getBalance(accountId));
 		} catch (CustomException e) {
-			return ResponseEntity.status(CUSTOM_HTTP_STATUS_ERROR).headers(CommonUtils.httpHeaders()).body(e.getErrors());
+			return ResponseEntity.status(CUSTOM_HTTP_STATUS_ERROR).headers(httpHeaders()).body(e.getErrors());
 		} catch (ServerException e) {
-			return ResponseEntity.status(CUSTOM_SERVER_STATUS_ERROR).headers(CommonUtils.httpHeaders()).body(e.getErrors());
+			return ResponseEntity.status(CUSTOM_SERVER_STATUS_ERROR).headers(httpHeaders()).body(e.getErrors());
 		}
 	}
 
@@ -67,11 +66,11 @@ public class RestService extends RestServiceA {
 	public ResponseEntity<Object> accountTransactions(@PathVariable String accountId, @RequestParam(name = "fromAccountingDate") String fromAccountingDate, @RequestParam(name = "toAccountingDate") String toAccountingDate) {
 		try {
 			validateTransactionsInput(accountId, fromAccountingDate, toAccountingDate);
-			return ResponseEntity.ok().headers(CommonUtils.httpHeaders()).body(accountManager.listTransactions(accountId, fromAccountingDate, toAccountingDate));
+			return ResponseEntity.ok().headers(httpHeaders()).body(accountManager.listTransactions(accountId, fromAccountingDate, toAccountingDate));
 		} catch (CustomException e) {
-			return ResponseEntity.status(CUSTOM_HTTP_STATUS_ERROR).headers(CommonUtils.httpHeaders()).body(e.getErrors());
+			return ResponseEntity.status(CUSTOM_HTTP_STATUS_ERROR).headers(httpHeaders()).body(e.getErrors());
 		} catch (ServerException e) {
-			return ResponseEntity.status(CUSTOM_SERVER_STATUS_ERROR).headers(CommonUtils.httpHeaders()).body(e.getErrors());
+			return ResponseEntity.status(CUSTOM_SERVER_STATUS_ERROR).headers(httpHeaders()).body(e.getErrors());
 		}
 	}
 
@@ -83,11 +82,11 @@ public class RestService extends RestServiceA {
 		try {
 			validateMoneyTransferInput(accountId, requestMoneyTransfer);
 			ResponseMoneyTransfer response = accountManager.moneyTransfers(accountId, requestMoneyTransfer);
-			return ResponseEntity.ok().headers(CommonUtils.httpHeaders()).body(response);
+			return ResponseEntity.ok().headers(httpHeaders()).body(response);
 		} catch (CustomException e) {
-			return ResponseEntity.status(CUSTOM_HTTP_STATUS_ERROR).headers(CommonUtils.httpHeaders()).body(e.getErrors());
+			return ResponseEntity.status(CUSTOM_HTTP_STATUS_ERROR).headers(httpHeaders()).body(e.getErrors());
 		} catch (ServerException e) {
-			return ResponseEntity.status(CUSTOM_SERVER_STATUS_ERROR).headers(CommonUtils.httpHeaders()).body(e.getErrors());
+			return ResponseEntity.status(CUSTOM_SERVER_STATUS_ERROR).headers(httpHeaders()).body(e.getErrors());
 		}
 	}
 }
