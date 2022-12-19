@@ -9,3 +9,20 @@ external-config:
     url-balance: /api/gbs/banking/v4.0/accounts/{accountId}/balance
     url-transactions: /api/gbs/banking/v4.0/accounts/{accountId}/transactions
     url-money-transfer: /api/gbs/banking/v4.0/accounts/{accountId}/payments/money-transfers
+    
+    
+    
+## H2 DB properties
+spring:
+  datasource:
+    url: jdbc:h2:mem:jpa_jbd
+    driverClassName: org.h2.Driver
+    username: sa
+    password: 
+  h2:
+    console: 
+      enabled: true
+      path: /h2
+  jackson:
+    serialization:
+      indent-output: false
