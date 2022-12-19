@@ -4,6 +4,7 @@
 Used technologies:
   - java 17
   - Spring Boot 3.0.0 
+  - Spring Data Jpa 3.0.0
   - Spring Rest Repositories
   - Spring WebMvcTest
   - Podman with Dockerfile
